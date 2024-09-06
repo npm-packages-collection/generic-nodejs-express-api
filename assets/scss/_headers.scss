@@ -1,0 +1,18 @@
+$headings: (
+  "h1": "largest",
+  "h2": "larger",
+  "h3": "large",
+  "h4": "normal",
+  "h5": "small",
+  "h6": "smaller"
+);
+
+@each $heading, $size in $headings {
+  #{$heading} {
+    line-height: 1.25;
+    font-weight: var(--font-light);
+    color: var(--theme-900);
+    margin: 0;
+    padding: 0;
+  }
+}

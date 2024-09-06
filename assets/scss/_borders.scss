@@ -1,0 +1,14 @@
+$borders: (
+  'solid',
+  'dotted',
+  'dashed'
+);
+
+/**
+ * @param {string} font borders
+ */
+:root {
+  @each $border in $borders {
+    --border-#{$border}: #{$border};
+  }
+}

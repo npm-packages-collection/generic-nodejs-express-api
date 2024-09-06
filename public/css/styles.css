@@ -1,0 +1,497 @@
+@import url(https://fonts.cdnfonts.com/css/amazon-ember);
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined);
+@import url(https://fonts.googleapis.com/css2?family=Comfortaa&display=swap:400,100,500,300italic,500italic,700italic,900,300);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,500,300italic,500italic,700italic,900,300);
+:root {
+  /**
+   * @param {string} font sizes
+   */
+  --font-pixel: calc(1rem * 0.0625);
+  --font-tiny: calc(1rem * 0.1);
+  --font-smallest: calc(1rem * 0.5);
+  --font-smaller: calc(1rem * 0.75);
+  --font-small: calc(1rem * 0.875);
+  --font-normal: calc(1rem * 1);
+  --font-large: calc(1rem * 1.125);
+  --font-larger: calc(1rem * 1.25);
+  --font-largest: calc(1rem * 1.5);
+  /**
+   * @param {string} spacing sizes
+   */
+  --spacing-pixel: calc(1rem * 0.0625);
+  --spacing-tiny: calc(1rem * 0.1);
+  --spacing-smallest: calc(1rem * 0.5);
+  --spacing-smaller: calc(1rem * 0.75);
+  --spacing-small: calc(1rem * 0.875);
+  --spacing-normal: calc(1rem * 1);
+  --spacing-large: calc(1rem * 1.125);
+  --spacing-larger: calc(1rem * 1.25);
+  --spacing-largest: calc(1rem * 1.5);
+  /**
+   * @param {string} radius sizes
+   */
+  --radius-pixel: calc(1rem * 0.0625);
+  --radius-tiny: calc(1rem * 0.1);
+  --radius-smallest: calc(1rem * 0.5);
+  --radius-smaller: calc(1rem * 0.75);
+  --radius-small: calc(1rem * 0.875);
+  --radius-normal: calc(1rem * 1);
+  --radius-large: calc(1rem * 1.125);
+  --radius-larger: calc(1rem * 1.25);
+  --radius-largest: calc(1rem * 1.5);
+  /**
+   * @param {string} border sizes
+   */
+  --border-pixel: calc(1rem * 0.0625);
+  --border-tiny: calc(1rem * 0.1);
+  --border-smallest: calc(1rem * 0.5);
+  --border-smaller: calc(1rem * 0.75);
+  --border-small: calc(1rem * 0.875);
+  --border-normal: calc(1rem * 1);
+  --border-large: calc(1rem * 1.125);
+  --border-larger: calc(1rem * 1.25);
+  --border-largest: calc(1rem * 1.5);
+  /**
+   * @param {string} padding sizes
+   */
+  --padding-pixel: calc(1rem * 0.0625);
+  --padding-tiny: calc(1rem * 0.1);
+  --padding-smallest: calc(1rem * 0.5);
+  --padding-smaller: calc(1rem * 0.75);
+  --padding-small: calc(1rem * 0.875);
+  --padding-normal: calc(1rem * 1);
+  --padding-large: calc(1rem * 1.125);
+  --padding-larger: calc(1rem * 1.25);
+  --padding-largest: calc(1rem * 1.5);
+  /**
+   * @param {string} margin sizes
+   */
+  --margin-pixel: calc(1rem * 0.0625);
+  --margin-tiny: calc(1rem * 0.1);
+  --margin-smallest: calc(1rem * 0.5);
+  --margin-smaller: calc(1rem * 0.75);
+  --margin-small: calc(1rem * 0.875);
+  --margin-normal: calc(1rem * 1);
+  --margin-large: calc(1rem * 1.125);
+  --margin-larger: calc(1rem * 1.25);
+  --margin-largest: calc(1rem * 1.5);
+  /**
+   * @param {string} size sizes
+   */
+  --size-pixel: calc(1rem * 0.0625);
+  --size-tiny: calc(1rem * 0.1);
+  --size-smallest: calc(1rem * 0.5);
+  --size-smaller: calc(1rem * 0.75);
+  --size-small: calc(1rem * 0.875);
+  --size-normal: calc(1rem * 1);
+  --size-large: calc(1rem * 1.125);
+  --size-larger: calc(1rem * 1.25);
+  --size-largest: calc(1rem * 1.5);
+  /**
+   * @param {string} font weights
+   */
+  --font-thin: 100;
+  --font-extra-light: 200;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+  --font-extra-bold: 800;
+  --font-black: 900;
+  /**
+  * @param {string} font weights
+  */
+  --line-height-pixel: 0.0625;
+  --line-height-tiny: 0.1;
+  --line-height-smallest: 0.5;
+  --line-height-smaller: 0.75;
+  --line-height-small: 0.875;
+  --line-height-normal: 1;
+  --line-height-large: 1.125;
+  --line-height-larger: 1.25;
+  --line-height-largest: 1.5;
+}
+
+h1 {
+  line-height: 1.25;
+  font-weight: var(--font-light);
+  color: var(--theme-900);
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  line-height: 1.25;
+  font-weight: var(--font-light);
+  color: var(--theme-900);
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  line-height: 1.25;
+  font-weight: var(--font-light);
+  color: var(--theme-900);
+  margin: 0;
+  padding: 0;
+}
+
+h4 {
+  line-height: 1.25;
+  font-weight: var(--font-light);
+  color: var(--theme-900);
+  margin: 0;
+  padding: 0;
+}
+
+h5 {
+  line-height: 1.25;
+  font-weight: var(--font-light);
+  color: var(--theme-900);
+  margin: 0;
+  padding: 0;
+}
+
+h6 {
+  line-height: 1.25;
+  font-weight: var(--font-light);
+  color: var(--theme-900);
+  margin: 0;
+  padding: 0;
+}
+
+strong {
+  color: var(--theme);
+}
+
+p {
+  font-size: var(--font-normal);
+  line-height: var(--line-height-largest);
+}
+
+@property --code {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+:root {
+  --stroke: var(--border-pixel);
+  --curve: cubic-bezier(.5,-0.53,.14,1.23);
+}
+
+status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  gap: 3rem;
+  user-select: none;
+  background: linear-gradient(to right, transparent calc(50% - var(--stroke)), var(--gray-50) calc(50% - var(--stroke)), var(--gray-50) 50%, transparent 50%);
+  background-size: 100% 6rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+state,
+description {
+  width: 50vw;
+}
+
+state {
+  counter-set: code var(--code);
+  text-align: right;
+  transition: --code 1250ms;
+}
+state:before {
+  content: counter(code);
+  font-size: 3rem;
+  color: var(--gray-50);
+}
+
+description {
+  text-align: left;
+}
+
+description:before {
+  content: var(--description);
+  color: var(--theme);
+}
+
+/**
+ * @param {string} font borders
+ */
+:root {
+  --border-solid: solid;
+  --border-dotted: dotted;
+  --border-dashed: dashed;
+}
+
+:root {
+  --tooltip-width: 75px;
+}
+
+[tooltip]:before {
+  content: attr(tooltip);
+  position: absolute;
+  width: var(--tooltip-width);
+  left: calc(var(--size-normal) * 3 - var(--size-normal) / 2);
+  padding-inline: var(--padding-smallest);
+  padding-block: var(--padding-normal);
+  pointer-events: none;
+  color: var(--theme);
+  font-size: var(--font-smaller);
+  font-weight: var(--font-black);
+  border: var(--border-solid) var(--border-pixel) var(--theme);
+  border-radius: var(--radius-smallest);
+  box-shadow: var(--size-pixel) var(--size-pixel) var(--theme-900);
+  background: var(--theme-10);
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  z-index: 1000;
+}
+[tooltip]:after {
+  content: "";
+  position: absolute;
+  left: calc(var(--size-normal) * 3 - var(--size-normal));
+  width: var(--size-normal);
+  aspect-ratio: 1;
+  background: linear-gradient(45deg, var(--theme-10), var(--theme-10) 50%, transparent 50%);
+  border: var(--border-solid) var(--border-pixel) var(--theme);
+  border-right: none;
+  border-top: none;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  z-index: 1001;
+}
+[tooltip]:hover:before, [tooltip]:hover:after {
+  opacity: 1;
+}
+
+code[response] {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: calc(var(--size-normal) * 2);
+  font-size: var(--font-size-smaller);
+  font-family: ui-monospace, monospace;
+  background: repeating-linear-gradient(135deg, var(--gray-25), var(--gray-25) var(--size-normal), var(--gray-50) var(--size-normal), var(--gray-50) calc(var(--size-normal) * 2));
+  padding-inline: var(--padding-large);
+  padding-top: var(--padding-small);
+  transition: max-height 500ms ease;
+}
+code[response]:hover {
+  max-height: 100%;
+  transition: max-height 500ms ease;
+}
+
+:root {
+  --theme: hsl(184, 96%, 45%);
+  --theme-900: color-mix(in hsl, hsl(184, 96%, 45%), white 0%);
+  --theme-800: color-mix(in hsl, hsl(184, 96%, 45%), white 5%);
+  --theme-700: color-mix(in hsl, hsl(184, 96%, 45%), white 10%);
+  --theme-600: color-mix(in hsl, hsl(184, 96%, 45%), white 15%);
+  --theme-500: color-mix(in hsl, hsl(184, 96%, 45%), white 20%);
+  --theme-400: color-mix(in hsl, hsl(184, 96%, 45%), white 25%);
+  --theme-300: color-mix(in hsl, hsl(184, 96%, 45%), white 30%);
+  --theme-200: color-mix(in hsl, hsl(184, 96%, 45%), white 35%);
+  --theme-100: color-mix(in hsl, hsl(184, 96%, 45%), white 40%);
+  --theme-50: color-mix(in hsl, hsl(184, 96%, 45%), white 45%);
+  --theme-25: color-mix(in hsl, hsl(184, 96%, 45%), white 75%);
+  --theme-10: color-mix(in hsl, hsl(184, 96%, 45%), white 90%);
+  --theme-0: color-mix(in hsl, hsl(184, 96%, 45%), white 100%);
+  --white-900: color-mix(in hsl, hsl(0, 0%, 100%), white 0%);
+  --white-800: color-mix(in hsl, hsl(0, 0%, 100%), white 5%);
+  --white-700: color-mix(in hsl, hsl(0, 0%, 100%), white 10%);
+  --white-600: color-mix(in hsl, hsl(0, 0%, 100%), white 15%);
+  --white-500: color-mix(in hsl, hsl(0, 0%, 100%), white 20%);
+  --white-400: color-mix(in hsl, hsl(0, 0%, 100%), white 25%);
+  --white-300: color-mix(in hsl, hsl(0, 0%, 100%), white 30%);
+  --white-200: color-mix(in hsl, hsl(0, 0%, 100%), white 35%);
+  --white-100: color-mix(in hsl, hsl(0, 0%, 100%), white 40%);
+  --white-50: color-mix(in hsl, hsl(0, 0%, 100%), white 45%);
+  --white-25: color-mix(in hsl, hsl(0, 0%, 100%), white 75%);
+  --white-10: color-mix(in hsl, hsl(0, 0%, 100%), white 90%);
+  --white-0: color-mix(in hsl, hsl(0, 0%, 100%), white 100%);
+  --black-900: color-mix(in hsl, hsl(0, 0%, 0%), white 0%);
+  --black-800: color-mix(in hsl, hsl(0, 0%, 0%), white 5%);
+  --black-700: color-mix(in hsl, hsl(0, 0%, 0%), white 10%);
+  --black-600: color-mix(in hsl, hsl(0, 0%, 0%), white 15%);
+  --black-500: color-mix(in hsl, hsl(0, 0%, 0%), white 20%);
+  --black-400: color-mix(in hsl, hsl(0, 0%, 0%), white 25%);
+  --black-300: color-mix(in hsl, hsl(0, 0%, 0%), white 30%);
+  --black-200: color-mix(in hsl, hsl(0, 0%, 0%), white 35%);
+  --black-100: color-mix(in hsl, hsl(0, 0%, 0%), white 40%);
+  --black-50: color-mix(in hsl, hsl(0, 0%, 0%), white 45%);
+  --black-25: color-mix(in hsl, hsl(0, 0%, 0%), white 75%);
+  --black-10: color-mix(in hsl, hsl(0, 0%, 0%), white 90%);
+  --black-0: color-mix(in hsl, hsl(0, 0%, 0%), white 100%);
+  --gray-900: color-mix(in hsl, hsl(0, 0%, 75%), white 0%);
+  --gray-800: color-mix(in hsl, hsl(0, 0%, 75%), white 5%);
+  --gray-700: color-mix(in hsl, hsl(0, 0%, 75%), white 10%);
+  --gray-600: color-mix(in hsl, hsl(0, 0%, 75%), white 15%);
+  --gray-500: color-mix(in hsl, hsl(0, 0%, 75%), white 20%);
+  --gray-400: color-mix(in hsl, hsl(0, 0%, 75%), white 25%);
+  --gray-300: color-mix(in hsl, hsl(0, 0%, 75%), white 30%);
+  --gray-200: color-mix(in hsl, hsl(0, 0%, 75%), white 35%);
+  --gray-100: color-mix(in hsl, hsl(0, 0%, 75%), white 40%);
+  --gray-50: color-mix(in hsl, hsl(0, 0%, 75%), white 45%);
+  --gray-25: color-mix(in hsl, hsl(0, 0%, 75%), white 75%);
+  --gray-10: color-mix(in hsl, hsl(0, 0%, 75%), white 90%);
+  --gray-0: color-mix(in hsl, hsl(0, 0%, 75%), white 100%);
+  --blue-900: color-mix(in hsl, hsl(216, 89%, 49%), white 0%);
+  --blue-800: color-mix(in hsl, hsl(216, 89%, 49%), white 5%);
+  --blue-700: color-mix(in hsl, hsl(216, 89%, 49%), white 10%);
+  --blue-600: color-mix(in hsl, hsl(216, 89%, 49%), white 15%);
+  --blue-500: color-mix(in hsl, hsl(216, 89%, 49%), white 20%);
+  --blue-400: color-mix(in hsl, hsl(216, 89%, 49%), white 25%);
+  --blue-300: color-mix(in hsl, hsl(216, 89%, 49%), white 30%);
+  --blue-200: color-mix(in hsl, hsl(216, 89%, 49%), white 35%);
+  --blue-100: color-mix(in hsl, hsl(216, 89%, 49%), white 40%);
+  --blue-50: color-mix(in hsl, hsl(216, 89%, 49%), white 45%);
+  --blue-25: color-mix(in hsl, hsl(216, 89%, 49%), white 75%);
+  --blue-10: color-mix(in hsl, hsl(216, 89%, 49%), white 90%);
+  --blue-0: color-mix(in hsl, hsl(216, 89%, 49%), white 100%);
+  --purple-900: color-mix(in hsl, hsl(260, 81%, 65%), white 0%);
+  --purple-800: color-mix(in hsl, hsl(260, 81%, 65%), white 5%);
+  --purple-700: color-mix(in hsl, hsl(260, 81%, 65%), white 10%);
+  --purple-600: color-mix(in hsl, hsl(260, 81%, 65%), white 15%);
+  --purple-500: color-mix(in hsl, hsl(260, 81%, 65%), white 20%);
+  --purple-400: color-mix(in hsl, hsl(260, 81%, 65%), white 25%);
+  --purple-300: color-mix(in hsl, hsl(260, 81%, 65%), white 30%);
+  --purple-200: color-mix(in hsl, hsl(260, 81%, 65%), white 35%);
+  --purple-100: color-mix(in hsl, hsl(260, 81%, 65%), white 40%);
+  --purple-50: color-mix(in hsl, hsl(260, 81%, 65%), white 45%);
+  --purple-25: color-mix(in hsl, hsl(260, 81%, 65%), white 75%);
+  --purple-10: color-mix(in hsl, hsl(260, 81%, 65%), white 90%);
+  --purple-0: color-mix(in hsl, hsl(260, 81%, 65%), white 100%);
+  --pink-900: color-mix(in hsl, hsl(309, 72%, 64%), white 0%);
+  --pink-800: color-mix(in hsl, hsl(309, 72%, 64%), white 5%);
+  --pink-700: color-mix(in hsl, hsl(309, 72%, 64%), white 10%);
+  --pink-600: color-mix(in hsl, hsl(309, 72%, 64%), white 15%);
+  --pink-500: color-mix(in hsl, hsl(309, 72%, 64%), white 20%);
+  --pink-400: color-mix(in hsl, hsl(309, 72%, 64%), white 25%);
+  --pink-300: color-mix(in hsl, hsl(309, 72%, 64%), white 30%);
+  --pink-200: color-mix(in hsl, hsl(309, 72%, 64%), white 35%);
+  --pink-100: color-mix(in hsl, hsl(309, 72%, 64%), white 40%);
+  --pink-50: color-mix(in hsl, hsl(309, 72%, 64%), white 45%);
+  --pink-25: color-mix(in hsl, hsl(309, 72%, 64%), white 75%);
+  --pink-10: color-mix(in hsl, hsl(309, 72%, 64%), white 90%);
+  --pink-0: color-mix(in hsl, hsl(309, 72%, 64%), white 100%);
+  --orange-900: color-mix(in hsl, hsl(42, 88%, 54%), white 0%);
+  --orange-800: color-mix(in hsl, hsl(42, 88%, 54%), white 5%);
+  --orange-700: color-mix(in hsl, hsl(42, 88%, 54%), white 10%);
+  --orange-600: color-mix(in hsl, hsl(42, 88%, 54%), white 15%);
+  --orange-500: color-mix(in hsl, hsl(42, 88%, 54%), white 20%);
+  --orange-400: color-mix(in hsl, hsl(42, 88%, 54%), white 25%);
+  --orange-300: color-mix(in hsl, hsl(42, 88%, 54%), white 30%);
+  --orange-200: color-mix(in hsl, hsl(42, 88%, 54%), white 35%);
+  --orange-100: color-mix(in hsl, hsl(42, 88%, 54%), white 40%);
+  --orange-50: color-mix(in hsl, hsl(42, 88%, 54%), white 45%);
+  --orange-25: color-mix(in hsl, hsl(42, 88%, 54%), white 75%);
+  --orange-10: color-mix(in hsl, hsl(42, 88%, 54%), white 90%);
+  --orange-0: color-mix(in hsl, hsl(42, 88%, 54%), white 100%);
+  --teal-900: color-mix(in hsl, hsl(184, 96%, 45%), white 0%);
+  --teal-800: color-mix(in hsl, hsl(184, 96%, 45%), white 5%);
+  --teal-700: color-mix(in hsl, hsl(184, 96%, 45%), white 10%);
+  --teal-600: color-mix(in hsl, hsl(184, 96%, 45%), white 15%);
+  --teal-500: color-mix(in hsl, hsl(184, 96%, 45%), white 20%);
+  --teal-400: color-mix(in hsl, hsl(184, 96%, 45%), white 25%);
+  --teal-300: color-mix(in hsl, hsl(184, 96%, 45%), white 30%);
+  --teal-200: color-mix(in hsl, hsl(184, 96%, 45%), white 35%);
+  --teal-100: color-mix(in hsl, hsl(184, 96%, 45%), white 40%);
+  --teal-50: color-mix(in hsl, hsl(184, 96%, 45%), white 45%);
+  --teal-25: color-mix(in hsl, hsl(184, 96%, 45%), white 75%);
+  --teal-10: color-mix(in hsl, hsl(184, 96%, 45%), white 90%);
+  --teal-0: color-mix(in hsl, hsl(184, 96%, 45%), white 100%);
+  --green-900: color-mix(in hsl, hsl(121, 78%, 45%), white 0%);
+  --green-800: color-mix(in hsl, hsl(121, 78%, 45%), white 5%);
+  --green-700: color-mix(in hsl, hsl(121, 78%, 45%), white 10%);
+  --green-600: color-mix(in hsl, hsl(121, 78%, 45%), white 15%);
+  --green-500: color-mix(in hsl, hsl(121, 78%, 45%), white 20%);
+  --green-400: color-mix(in hsl, hsl(121, 78%, 45%), white 25%);
+  --green-300: color-mix(in hsl, hsl(121, 78%, 45%), white 30%);
+  --green-200: color-mix(in hsl, hsl(121, 78%, 45%), white 35%);
+  --green-100: color-mix(in hsl, hsl(121, 78%, 45%), white 40%);
+  --green-50: color-mix(in hsl, hsl(121, 78%, 45%), white 45%);
+  --green-25: color-mix(in hsl, hsl(121, 78%, 45%), white 75%);
+  --green-10: color-mix(in hsl, hsl(121, 78%, 45%), white 90%);
+  --green-0: color-mix(in hsl, hsl(121, 78%, 45%), white 100%);
+  --red-900: color-mix(in hsl, hsl(0, 92%, 51%), white 0%);
+  --red-800: color-mix(in hsl, hsl(0, 92%, 51%), white 5%);
+  --red-700: color-mix(in hsl, hsl(0, 92%, 51%), white 10%);
+  --red-600: color-mix(in hsl, hsl(0, 92%, 51%), white 15%);
+  --red-500: color-mix(in hsl, hsl(0, 92%, 51%), white 20%);
+  --red-400: color-mix(in hsl, hsl(0, 92%, 51%), white 25%);
+  --red-300: color-mix(in hsl, hsl(0, 92%, 51%), white 30%);
+  --red-200: color-mix(in hsl, hsl(0, 92%, 51%), white 35%);
+  --red-100: color-mix(in hsl, hsl(0, 92%, 51%), white 40%);
+  --red-50: color-mix(in hsl, hsl(0, 92%, 51%), white 45%);
+  --red-25: color-mix(in hsl, hsl(0, 92%, 51%), white 75%);
+  --red-10: color-mix(in hsl, hsl(0, 92%, 51%), white 90%);
+  --red-0: color-mix(in hsl, hsl(0, 92%, 51%), white 100%);
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+  margin: 0;
+  padding: 0;
+  font-family: "Amazon Ember";
+  font-variant-caps: titling-caps;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(var(--padding-largest) * 4);
+  padding-inline: var(--padding-normal);
+  background: var(--theme-10);
+  border-bottom: var(--border-dotted) var(--border-pixel) var(--theme);
+  display: flex;
+}
+
+main {
+  position: relative;
+  grid-area: main;
+  overflow-y: auto;
+  padding: var(--padding-normal);
+}
+
+footer {
+  grid-area: footer;
+  background: var(--black-500);
+  color: var(--gray-25);
+  font-size: var(--font-smaller);
+  padding: var(--padding-normal);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer user {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-smallest);
+}
+footer user strong {
+  color: var(--gray-500);
+}
+footer user img {
+  height: calc(var(--padding-normal) * 1.5);
+  width: calc(var(--padding-normal) * 1.5);
+  aspect-ratio: 1;
+  border-radius: calc(var(--padding-normal) * 1.5);
+  outline: var(--border-dotted) var(--border-pixel) var(--theme);
+}
+
+/*# sourceMappingURL=styles.css.map */
