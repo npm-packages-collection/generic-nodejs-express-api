@@ -1,0 +1,83 @@
+{
+  "name": "generic-nodejs-express-api",
+  "description": "Generic NodeJs Express API",
+  "author": {
+    "name": "Eugene Yevhen Andruszczenko",
+    "email": "eugene.andruszczenko@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "32teeth",
+      "email": "eugene.andruszczenko@gmail.com",
+      "url": "https://github.com/32teeth"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/32teeth/generic-nodejs-express-api.git"
+  },
+  "license": "ISC",
+  "version": "0.0.2",
+  "engines": {
+    "node": "20.x",
+    "npm": "10.x"
+  },
+  "main": "index.js",
+  "bin": {
+    "generic-nodejs-express-api": "./bin/cli.mjs"
+  },
+  "scripts": {
+    "reset": "npm run hook && npm install",
+    "certs": "npm run certs:sudo",
+    "certs:sudo": "[ \"$EUID\" -ne 0 ] && echo '\\033[0;43mYou will need to run the command in sudo.\\033[0m\\nNPM command -> \\033[0;32msudo npm run certs\\033[0m' && npm run certs:sudo:clipboard && exit 1 || npm run certs:generate",
+    "certs:sudo:clipboard": "sh -c 'CMD=\"sudo npm run certs\" && (echo \"$CMD\" | pbcopy || echo \"$CMD\" | xclip -selection clipboard || echo \"$CMD\" | clip) && echo \"\\033[0;32m${CMD}\\033[0m \\033[0;37m <-- has been copied to your clipboard\\033[0m\"'",
+    "certs:generate": "run-s certs:env certs:clean certs:mkdir certs:ssl certs:chmod certs:port certs:vars certs:clean certs:success",
+    "certs:clean": "rm -rf certs",
+    "certs:mkdir": "mkdir certs",
+    "certs:ssl": "sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout certs/selfsigned.key -out certs/selfsigned.crt",
+    "certs:chmod": "chmod 777 certs/*",
+    "certs:env": "rm .env && touch .env",
+    "certs:vars": "echo \"APP_CRT=$(base64 -i certs/selfsigned.crt)\" >> .env && echo \"APP_KEY=$(base64 -i certs/selfsigned.key)\" >> .env",
+    "certs:port": "echo \"PORT=3000\" >> .env",
+    "certs:key": "echo \"APP_KEY=$(base64 -i certs/selfsigned.key)\" >> .env",
+    "certs:crt": "echo \"APP_CRT=$(base64 -i certs/selfsigned.crt)\" >> .env",
+    "certs:success": "echo '\\033[0;42mCertificates have been generated\\033[0m\\033[32m\\nYou can now run the following command to start the server:\\033[0m\\nNPM command -> \\033[0;32mnpm run dev:https\\033[0m' && npm run certs:success:clipboard",
+    "certs:success:clipboard": "sh -c 'CMD=\"npm run dev:https\" && (echo \"$CMD\" | pbcopy || echo \"$CMD\" | xclip -selection clipboard || echo \"$CMD\" | clip) && echo \"\\033[0;32m${CMD}\\033[0m \\033[0;37m <-- has been copied to your clipboard\\033[0m\"'",
+    "hook": "run-s certs:clean certs:env certs:port",
+    "sass:build": "sass assets/scss:public/css",
+    "sass:watch": "sass --watch assets/scss:public/css",
+    "sass": "run-p sass:watch",
+    "dev": "run-p sass:watch dev:server",
+    "dev:server": "nodemon index.js",
+    "dev:https": "HTTPS=true npm run dev",
+    "prod": "NODE_ENV=production npm run dev",
+    "prod:https": "NODE_ENV=production HTTPS=true npm run dev",
+    "start": "HEROKU=true node index.js",
+    "heroku-prebuild": "echo This runs before Heroku installs dependencies.",
+    "heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies.",
+    "heroku-cleanup": "echo This runs after Heroku prunes and caches dependencies.",
+    "test": "nodemon --exec 'mocha'"
+  },
+  "pre-commit": {
+    "run": "hook"
+  },
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.10",
+    "express": "^4.18.2",
+    "ip": "^2.0.1",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "chalk": "^4.1.2",
+    "mocha": "^10.7.3",
+    "nodemon": "^3.0.2",
+    "npm-run-all": "^4.1.5",
+    "pre-commit": "^1.2.2",
+    "sass": "^1.77.8"
+  }
+}

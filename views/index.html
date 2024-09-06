@@ -1,0 +1,17 @@
+<%- include('partials/core.head.html') %>
+<%- include('partials/header.html') %>
+<main>
+  <code response>
+    <h3>API Response</h3>
+    <pre>
+<%= JSON.stringify(response, null, 2) %>
+    </pre>
+  </code>
+
+  <status>
+    <state style="--code: <%= response.success.code %>"></state>
+    <description style="--description: '<%= response.success.description %>'"></description>
+  </status>
+</main>
+<%- include('partials/footer.html') %>
+<%- include('partials/core.tail.html') %>

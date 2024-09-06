@@ -1,0 +1,57 @@
+$color-white: hsl(0, 0%, 100%);
+$color-black: hsl(0, 0%, 0%);
+$color-gray: hsl(0, 0%, 75%);
+$color-blue: hsl(216, 89%, 49%);
+$color-purple: hsl(260, 81%, 65%);
+$color-pink: hsl(309, 72%, 64%);
+$color-orange: hsl(42, 88%, 54%);
+$color-teal: hsl(184, 96%, 45%);
+$color-green: hsl(121, 78%, 45%);
+$color-red: hsl(360, 92%, 51%);
+
+$colors: (
+  "white": $color-white,
+  "black": $color-black,
+  "gray": $color-gray,
+  "blue": $color-blue,
+  "purple": $color-purple,
+  "pink": $color-pink,
+  "orange": $color-orange,
+  "teal": $color-teal,
+  "green": $color-green,
+  "red": $color-red
+);
+
+$luminances: (
+  "900": 0%,
+  "800": 5%,
+  "700": 10%,
+  "600": 15%,
+  "500": 20%,
+  "400": 25%,
+  "300": 30%,
+  "200": 35%,
+  "100": 40%,
+  "50": 45%,
+  "25": 75%,
+  "10": 90%,
+  "0": 100%
+);
+
+@mixin generate-theme($theme) {
+  :root {
+    --theme: #{$theme};
+    @each $luminance, $percent in $luminances {
+      --theme-#{$luminance}: #{color-mix(in hsl, #{$theme}, white $percent)};
+    }
+
+    @each $name, $color in $colors {
+      @each $luminance, $percent in $luminances {
+        --#{$name}-#{$luminance}: #{color-mix(in hsl, $color, white $percent)};
+      }
+    }
+  }
+}
+
+
+
