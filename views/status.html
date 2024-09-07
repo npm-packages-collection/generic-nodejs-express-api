@@ -1,0 +1,19 @@
+<%- include('partials/core.head.html') %>
+<%- include('partials/header.html') %>
+
+<main>
+  <code response>
+    <h3>API Response</h3>
+    <pre>
+      <%= JSON.stringify(response, null, 2) %>
+    </pre>
+  </code>
+
+  <status>
+    <state style="--code: <%= response.error.code %>"></state>
+    <description style="--description: '<%= response.error.description %>'"></description>
+  </status>
+</main>
+
+<%- include('partials/footer.html', { user: (typeof user !== 'undefined' ? user : null) }) %>
+<%- include('partials/core.tail.html') %>

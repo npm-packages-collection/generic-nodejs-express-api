@@ -1,0 +1,73 @@
+@import 'fonts';
+@import 'sizes';
+@import 'colors';
+@import 'headers';
+@import 'typography';
+@import 'status';
+@import 'borders';
+@import 'tooltip';
+@import 'code';
+
+$theme: $color-teal;
+@include generate-theme($theme);
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+  margin: 0;
+  padding: 0;
+  font-family: 'Amazon Ember';
+  font-variant-caps: titling-caps;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(var(--padding-largest) * 4);
+  padding-inline: var(--padding-normal);
+  background: var(--theme-10);
+  border-bottom: var(--border-dotted) var(--border-pixel) var(--theme);
+  display: flex;
+}
+
+main {
+  position: relative;
+  grid-area: main;
+  overflow-y: auto;
+  padding: var(--padding-normal);
+}
+
+footer {
+  grid-area: footer;
+  background: var(--black-500);
+  color: var(--gray-25);
+  font-size: var(--font-smaller);
+  padding: var(--padding-normal);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  $avatar-size: calc(var(--padding-normal) * 1.5);
+  user {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-smallest);
+    strong {
+      color: var(--gray-500);
+    }
+    img {
+      height: $avatar-size;
+      width: $avatar-size;
+      aspect-ratio: 1;
+      border-radius: $avatar-size;
+      outline: var(--border-dotted) var(--border-pixel) var(--theme);
+    }
+  }
+}
