@@ -23,6 +23,13 @@ The Generic Node.js Express API is a template project that provides a basic setu
 
 ## Installation
 
+### NPX
+> RUn it as an NPX
+
+  ```bash
+  npx generic-nodejs-express-api my-awesome-api-project
+  ```
+
 To set up the Generic Node.js Express API, follow these steps:
 
 1. Clone this repository to your local machine:
