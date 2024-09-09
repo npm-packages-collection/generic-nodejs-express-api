@@ -2,6 +2,20 @@
 
 Welcome to the Generic Node.js Express API repository! This repository contains the code and documentation for a generic Express API built using Node.js, as well as a frontend server.
 
+### Quick Start
+
+> [!TIP]
+> Create a project from scratch
+```
+npx generic-nodejs-express-api my-awesome-api-project
+```
+
+> [!TIP]
+> Add it to an existing project
+```
+npm i generic-nodejs-express-api
+```
+
 ## Table of Contents
 
 - [Introduction](#introduction)
