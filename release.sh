@@ -26,14 +26,14 @@ github() {
 
   gh release create "$version" --generate-notes --title "$version" --notes "Release $version"
 
-  echo "Running npm publish"
-  npm publish
-  if [ $? -ne 0 ]; then
-    echo "npm publish failed"
-    exit 1
-  else
-    echo "npm publish succeeded"
-  fi
+  #echo "Running npm publish"
+  #npm publish
+  #if [ $? -ne 0 ]; then
+  #  echo "npm publish failed"
+  #  exit 1
+  #else
+  #  echo "npm publish succeeded"
+  #fi
 }
 
 changelog() {
