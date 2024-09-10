@@ -10,7 +10,7 @@
     "url": "git+https://github.com/32teeth/generic-nodejs-express-api.git"
   },
   "license": "CC-BY-SA-4.0",
-  "version": "0.0.3",
+  "version": "0.1.3",
   "keywords": [
     "nodejs",
     "express",
