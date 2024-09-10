@@ -1,5 +1,5 @@
 {
-  "name": "generic-nodejs-express-api",
+  "name": "@32teeth/generic-nodejs-express-api",
   "description": "Generic NodeJs Express API",
   "author": "Eugene Yevhen Andruszczenko <eugene.andruszczenko@gmail.com>",
   "contributors": [
@@ -20,7 +20,7 @@
     "web"
   ],
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "engines": {
     "node": "20.x",
