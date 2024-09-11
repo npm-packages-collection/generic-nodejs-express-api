@@ -1,0 +1,25 @@
+code {
+  &[response] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: calc(var(--size-normal) * 2);
+    font-size: var(--font-size-smaller);
+    font-family: ui-monospace,monospace;
+    background: repeating-linear-gradient(
+      135deg,
+      var(--gray-25),
+      var(--gray-25) var(--size-normal),
+      var(--gray-50) var(--size-normal),
+      var(--gray-50) calc(var(--size-normal) * 2)
+    );
+    padding-inline: var(--padding-large);
+    padding-top: var(--padding-small);
+    transition: max-height 500ms ease;
+    &:hover {
+      max-height: 100%;
+      transition: max-height 500ms ease;
+    }
+  }
+}

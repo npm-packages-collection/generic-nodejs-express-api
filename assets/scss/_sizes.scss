@@ -1,0 +1,60 @@
+$base-size: 1rem;
+
+$sizes: (
+  'pixel': 0.0625,
+  'tiny': 0.1,
+  'smallest': 0.5,
+  'smaller': 0.75,
+  'small': 0.875,
+  'normal': 1,
+  'large': 1.125,
+  'larger': 1.25,
+  'largest': 1.5
+);
+
+$properties: (
+  'font',
+  'spacing',
+  'radius',
+  'border',
+  'padding',
+  'margin',
+  'size'
+);
+
+$weights: (
+  'thin': 100,
+  'extra-light': 200,
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'semi-bold': 600,
+  'bold': 700,
+  'extra-bold': 800,
+  'black': 900
+);
+
+:root {
+  @each $property in $properties {
+    /**
+     * @param {string} #{$property} sizes
+     */
+    @each $size, $value in $sizes {
+      --#{$property}-#{$size}: calc(#{$base-size} * #{$value});
+    }
+  }
+
+  /**
+   * @param {string} font weights
+   */
+  @each $weight, $value in $weights {
+    --font-#{$weight}: #{$value};
+  }
+
+    /**
+   * @param {string} font weights
+   */
+   @each $weight, $value in $sizes {
+    --line-height-#{$weight}: #{$value};
+  }
+}

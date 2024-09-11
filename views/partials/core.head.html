@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" lang="en">
+  <head>
+    <%- include('core.meta.html') %>
+    <title>Generic NodeJS Express REST API</title>
+
+    <link rel="stylesheet" href="/css/styles.css" integrity="">
+
+    <!-- favicon -->
+    <% for (var i = 0; i < 6; i++) { %>
+      <link rel="icon" type="image/svg+xml" sizes="<%= 16 * Math.pow(2, i) %>x<%= 16 * Math.pow(2, i) %>" href="/icons/github-<%= 16 * Math.pow(2, i) %>x<%= 16 * Math.pow(2, i) %>.svg">
+    <% } %>
+
+    <!-- favicon -->
+    <% for (var i = 0; i < 6; i++) { %>
+      <link rel="icon" sizes="<%= 16 * Math.pow(2, i) %>x<%= 16 * Math.pow(2, i) %>" href="/icons/github-<%= 16 * Math.pow(2, i) %>x<%= 16 * Math.pow(2, i) %>.ico">
+    <% } %>
+  </head>
+  <body>
