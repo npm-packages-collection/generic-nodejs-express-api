@@ -1,12 +1,8 @@
 'use strict';
 
-if(!process.env.HEROKU) {
+if (!process.env.HEROKU) {
   require('dotenv').config();
 }
-/**
- * npm packages
- */
-const fs = require('fs');
 const express = require('express');
 const app = require('express')();
 const base64 = require('base-64');
@@ -28,27 +24,27 @@ if (process.env.HTTPS) {
 const server = process.env.HTTPS ? require('https').createServer(options, app) : require('http').createServer(app);
 const port = process.env.PORT;
 const cors = require('cors');
-const ip = require("ip");
 
-global.os = require('os');
-global.ifaces = os.networkInterfaces();
-
-Object.keys(ifaces).forEach(function (ifname) {
-  var alias = 0;
-
-  ifaces[ifname].forEach(function (iface) {
-    if ('IPv4' !== iface.family || iface.internal !== false) {
-      return;
+/**
+ * Replace ip package with custom IP class
+ */
+class IP {
+  address() {
+    const os = require('os');
+    const networkInterfaces = os.networkInterfaces();
+    for (const interfaceName of Object.keys(networkInterfaces)) {
+      for (const iface of networkInterfaces[interfaceName]) {
+        // Skip over internal (i.e., 127.0.0.1) and non-IPv4 addresses
+        if (iface.family === 'IPv4' && !iface.internal) {
+          return iface.address;
+        }
+      }
     }
+    return '127.0.0.1';
+  }
+}
 
-    if (alias >= 1) {
-      console.log(ifname + ':' + alias, iface.address);
-    } else {
-      console.log(ifname, iface.address);
-    }
-    ++alias;
-  });
-});
+const ip = new IP();
 
 /**
  * router
@@ -125,8 +121,54 @@ app.all('*', (req, res) => {
   res.redirect('/404');
 });
 
+const convert = (collection) => {
+  if (collection instanceof Map) {
+    let obj = {};
+    for (let [k, v] of collection) {
+      obj[k] = convert(v);
+    }
+    return obj;
+  } else if (collection instanceof Set) {
+    let arr = [];
+    for (let value of collection) {
+      arr.push(convert(value));
+    }
+    return arr;
+  } else {
+    return collection;
+  }
+};
+
+const stringify = (data) => {
+  return JSON.stringify(data);
+};
+
+const wss = require('ws').Server;
+const socket = new wss({ server: server });
+socket.broadcast = (obj) => socket.clients.forEach((client) => client.json(obj));
+
+socket.on('connection', (ws) => {
+  ws.json = (obj) => ws.send(JSON.stringify(obj));
+  ws.broadcast = socket.broadcast;
+  ws.id = uuid()
+
+  ws.on('message', (message) => {
+    message = JSON.parse(message);
+    const { service, data } = message;
+
+    switch (service) {
+      default:
+        log(chalk`{bgWhite.bold ${service}} {white.bold ${stringify(data)}}`);
+        break;
+    }
+  });
+});
+
 module.exports = server.listen(port, () => {
-  log(chalk`{bgBlue.bold Web:} {blue.bold ${process.env.HTTPS ? 'https' : 'http'}://localhost:${port}} {cyan.bold ${process.env.HTTPS ? 'https' : 'http'}://${ip.address()}:${port}}`)
-  log(chalk`{bgBlue.bold API:} {blue.bold ${process.env.HTTPS ? 'https' : 'http'}://api.localhost:${port}} {cyan.bold ${process.env.HTTPS ? 'https' : 'http'}://api.${ip.address()}:${port}}`)
+  log(chalk`
+{bgBlue.bold Web:}\t{blue.bold ${process.env.HTTPS ? 'https' : 'http'}://localhost:${port}} {cyan.bold ${process.env.HTTPS ? 'https' : 'http'}://${ip.address()}:${port}}
+{bgBlue.bold API:}\t{blue.bold ${process.env.HTTPS ? 'https' : 'http'}://api.localhost:${port}} {cyan.bold ${process.env.HTTPS ? 'https' : 'http'}://api.${ip.address()}:${port}}
+{bgBlue.bold Socket:}\t{blue.bold ${process.env.HTTPS ? 'wss' : 'ws'}://localhost:${port}} {cyan.bold ${process.env.HTTPS ? 'wss' : 'ws'}://${ip.address()}:${port}}
+`);
   chalk.reset();
 });
