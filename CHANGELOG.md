@@ -1,5 +1,12 @@
 # Changelog
 
+### 0.1.6
+
+Changes in this version:
+
+* build: 0.1.5
+* feature: sockets
+
 ### 0.1.5
 
 Changes in this version:

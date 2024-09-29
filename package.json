@@ -10,7 +10,7 @@
     "url": "git+https://github.com/npm-packages-collection/generic-nodejs-express-api.git"
   },
   "license": "CC-BY-SA-4.0",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "keywords": [
     "nodejs",
     "express",
