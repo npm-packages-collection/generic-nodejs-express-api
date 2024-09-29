@@ -18,7 +18,7 @@ if (process.argv.length < 3) {
 const projectName = process.argv[2];
 const currentPath = process.cwd();
 const projectPath = path.join(currentPath, projectName);
-const gitRepo = "https://github.com/32teeth/generic-nodejs-express-api.git";
+const gitRepo = "https://github.com/npm-packages-collection/generic-nodejs-express-api.git";
 
 // create project directory
 if (fs.existsSync(projectPath)) {

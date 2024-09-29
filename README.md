@@ -48,7 +48,7 @@ To set up the Generic Node.js Express API, follow these steps:
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone git@github.com:32teeth/generic-nodejs-express-api.git
+   git clone git@github.com:npm-packages-collection/generic-nodejs-express-api.git
    ```
 2. Navigate into the project directory:
    ```bash

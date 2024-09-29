@@ -1,5 +1,5 @@
 {
-  "name": "generic-nodejs-express-api",
+  "name": "@npm-packages-collection/generic-nodejs-express-api",
   "description": "Generic NodeJs Express API",
   "author": "Eugene Yevhen Andruszczenko <eugene.andruszczenko@gmail.com>",
   "contributors": [
@@ -7,10 +7,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/32teeth/generic-nodejs-express-api.git"
+    "url": "git+https://github.com/npm-packages-collection/generic-nodejs-express-api.git"
   },
   "license": "CC-BY-SA-4.0",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "keywords": [
     "nodejs",
     "express",
@@ -20,7 +20,7 @@
     "web"
   ],
   "publishConfig": {
-    "registry": "https://registry.npmjs.com/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "engines": {
     "node": "20.x",
@@ -60,7 +60,10 @@
     "heroku-prebuild": "echo This runs before Heroku installs dependencies.",
     "heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies.",
     "heroku-cleanup": "echo This runs after Heroku prunes and caches dependencies.",
-    "test": "mocha"
+    "test": "mocha",
+    "publish:npm": "npm publish --registry https://registry.npmjs.org/",
+    "publish:github": "npm publish --registry https://npm.pkg.github.com/",
+    "publish": "npm run publish:npm && npm run publish:github"
   },
   "pre-commit": {
     "run": "hook"
@@ -84,9 +87,9 @@
     "sass": "^1.77.8"
   },
   "bugs": {
-    "url": "https://github.com/32teeth/generic-nodejs-express-api/issues"
+    "url": "https://github.com/npm-packages-collection/generic-nodejs-express-api/issues"
   },
-  "homepage": "https://github.com/32teeth/generic-nodejs-express-api#readme",
+  "homepage": "https://github.com/npm-packages-collection/generic-nodejs-express-api#readme",
   "directories": {
     "test": "test"
   }

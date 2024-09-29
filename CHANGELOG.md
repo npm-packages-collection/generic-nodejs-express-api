@@ -1,5 +1,11 @@
 # Changelog
 
+### 0.1.5
+
+Changes in this version:
+
+* feature: sockets
+
 ### 0.1.4
 
 What changed in this version?

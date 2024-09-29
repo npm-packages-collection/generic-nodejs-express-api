@@ -5,8 +5,6 @@ github() {
   local version="$1"
   local reset="$2"
 
-  npm run hook
-
   if [ "$reset" == "--reset" ]; then
     git checkout --orphan orphan
   fi
@@ -26,26 +24,33 @@ github() {
 
   gh release create "$version" --generate-notes --title "$version" --notes "Release $version"
 
-  #echo "Running npm publish"
-  #npm publish
-  #if [ $? -ne 0 ]; then
-  #  echo "npm publish failed"
-  #  exit 1
-  #else
-  #  echo "npm publish succeeded"
-  #fi
+  echo "Running npm publish"
+  npm run publish
+  if [ $? -ne 0 ]; then
+    echo "npm publish failed"
+    exit 1
+  else
+    echo "npm publish succeeded"
+  fi
 }
 
 changelog() {
   local file="CHANGELOG.md"
   local version="$1"
-  local changes="What changed in this version?"
-  local list="* Change 1
-* Change 2
-* Change 3"
+  local previous_version=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null)
+  local changes="Changes in this version:"
 
+  # Generate a list of changes between the previous and current version
+  if [ -n "$previous_version" ]; then
+    local list=$(git log --pretty=format:"* %s" "$previous_version"..HEAD)
+  else
+    local list=$(git log --pretty=format:"* %s")
+  fi
+
+  # Remove the first two lines of the changelog file
   sed '1,2d' "$file" > temp_changelog.mdx
 
+  # Write the new version's changelog entry
   cat <<EOF > "$file"
 # Changelog
 
@@ -58,8 +63,10 @@ $list
 $(cat temp_changelog.mdx)
 EOF
 
+  # Remove the temporary file
   rm temp_changelog.mdx
 }
+
 
 update_version() {
   local package="package.json"
@@ -86,8 +93,6 @@ update_version() {
 update() {
   update_version
   changelog "$version"
-  npm run sass:build
-
   github "$version" "$1"
 }
 
